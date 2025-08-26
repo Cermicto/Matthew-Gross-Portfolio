@@ -172,10 +172,12 @@ body {
 
 #portraitOrientationBtn {
     left: 0;
+    border-radius: 0 0 0 6px;
 }
 
 #landscapeOrientationBtn {
     right: 0;
+    border-radius: 0 0 6px 0;
 }
 
 .orientation-btn {
