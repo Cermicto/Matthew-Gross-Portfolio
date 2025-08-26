@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-0WVFQC2EK0"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-0WVFQC2EK0');
+		</script>
+		<title>Full Editor</title>
+
+		<!-- These two scripts just hold some default html and css as js variables for use if nothing is found in localStorage to load into the textarea value attribute. -->
+		<script type="text/javascript" src="demo.content.html.js"></script>
+		<script type="text/javascript" src="demo.content.formatted.css.js"></script>
+		<script type="text/javascript" src="script.js" defer></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<iframe id="targetFrame" class="right-50"></iframe><!-- iframe used to render output -->
+
+		<div id="editorsContainer" class="left-50">		
+			<!-- Editor containers act similar for each code type. Line numbers show all line numbers and current one is highlighted. Lines adjust to scrolling and cursor placement for current line highlighting. textarea areas are used for raw code input and are transparent overlaying color code html portions. code-colored divs are displays of html/css formatted code based on characters input into text area. 
+				Basically, font sizes and placements are identical for textarea and code-colored areas making it appear that editing of the colored code is taking place. -->
+			<div id="htmlEditorContainer" class="top-33">
+				<edittag>HTML</edittag>
+				<div id="htmlLineNumbers" class="line-numbers"></div>
+				<textarea id="htmlCode" class="editor-textarea"></textarea>
+				<div id="htmlColored" class="code-colored"></div>
+			</div>
+
+			<div id="cssEditorContainer" class="middle-33">
+				<edittag>CSS</edittag>
+				<div id="cssLineNumbers" class="line-numbers"></div>
+				<textarea id="cssCode" class="editor-textarea"></textarea>
+				<div id="cssColored" class="code-colored"></div>
+			</div>
+
+			<div id="jsEditorContainer" class="bottom-33">
+				<edittag>JS</edittag>
+				<div id="jsLineNumbers" class="line-numbers"></div>
+				<textarea id="jsCode" class="editor-textarea"></textarea>
+				<div id="jsColored" class="code-colored"></div>
+			</div>
+		</div>
+	</body>
+</html>

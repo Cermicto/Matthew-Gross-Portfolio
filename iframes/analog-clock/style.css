@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+    color: white;
+}
+
+.clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    transform: scale(1,1);
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 10px 0 #00899b, inset 0 0 10px 0 #00899b;
+}
+
+.center-dot {
+    position: absolute;
+    top: 149px;
+    left: 149px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid white;
+    background-color: #000000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    box-shadow: 0 0 10px 0 #008a9c, inset 0 0 5px 0 #008a9c;
+}
+
+.hand {
+    position: absolute;
+    transform-origin: 50% 100%;
+    background-color: #333;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 60px;
+    top: 89px;
+    left: 146px;
+    background: #555555;
+    position: absolute;
+    transform-origin: bottom;
+    border-radius: 50% 50% 0 0;
+}
+
+.minute-hand {
+    width: 4px;
+    height: 75px;
+    top: 74px;
+    left: 147px;
+    background: #b7b7b7;
+    position: absolute;
+    transform-origin: bottom;
+    border-radius: 50% 50% 0 0;
+    transition: all 1s ease-in-out;
+}
+
+/* Minute Marks */
+.clock::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 140px;
+    transform: translate(-50%, -50%);
+}
+
+
+.clock::after {
+    content: '';
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 140px;
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.minute-mark.tick-highlighted {
+    color: #ccc;
+    transition: color 0.25s ease-in-out;
+}
+
+.hour-mark-divider.tick-highlighted {
+    color: #ff0000;
+    transition: color 0.25s ease-in-out;
+}
+
+.minute-mark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 0.8em;
+    color: #222;
+}
+
+.hour-mark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.8em;
+    color: #555;
+    line-height: .6em;
+}
+
+.hour-mark-number {
+    position: relative;
+    display: block;
+    text-shadow: 0 0 0 transparent;
+    transition: all 1s ease-in-out;
+}
+
+.hour-mark-number.number-highlighted {
+    text-shadow: 0 0 6px #00e2ff;
+    color: white;
+}
+
+.hour-mark-divider {
+    text-shadow: 0 0 0 transparent;
+    transition: all 1s ease-in-out;
+    color: #4b0000;
+}
+
+.hour-divider-highlighted {
+    text-shadow: 0 0 6px #00e2ff;
+    color: #00e2ff8a !important;
+}
+
+.minute-mark {
+    text-shadow: 0 0 0 transparent;
+    transition: all 1s ease-in-out;
+}
+
+.minute-divider-highlighted {
+    text-shadow: 0 0 3px #ffffff;
+    color: #d6ff00 !important;
+}
+
+.hour-mark-number-box {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+#circleRotator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 58.5%;
+    height: 58.5%;
+    border: 1px solid #333;
+    border-radius: 50%;
+    perspective: 800px;
+    transition: all 1s ease-in-out;
+    z-index: 99;
+}
+
+#ball3D {
+    position: absolute;
+    top: -13.6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transform-style: preserve-3d;
+}
+
+.ball-outline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    border: 1px solid red;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#ballOutline1 {
+/*    animation-name: bo1Rotate;*/
+    animation-duration: 1s;
+    animation-direction: alternate;
+    transform: translateX(-50%) translateY(-60%);
+}
+
+@keyframes bo1Rotate {
+    0% {
+        transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.2,0.2);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) rotateX(360deg) rotateY(720deg) rotateZ(1080deg) scale(0.4,0.4);
+    }
+}
+
+#ballOutline2 {
+/*    animation-name: bo2Rotate;*/
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+
+@keyframes bo2Rotate {
+    0% {
+        transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.4,0.4);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) rotateX(1080deg) rotateY(360deg) rotateZ(720deg) scale(0.2,0.2);
+    }
+}
+
+#ballOutline3 {
+    animation-name: bo3Rotate;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+
+@keyframes bo3Rotate {
+    0% {
+        transform: translateX(-50%) translateY(-130%) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.6,0.6);
+    }
+    100% {
+        transform: translateX(-50%) translateY(50%) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(0.3,0.3);
+    }
+}
+
+#ballOutline4 {
+    animation-name: bo4Rotate;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+
+@keyframes bo4Rotate {
+    0% {
+        transform: translateX(-50%) translateY(50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.3,0.3);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-130%) rotateX(0deg) rotateY(720deg) rotateZ(0deg) scale(0.6,0.6);
+    }
+}

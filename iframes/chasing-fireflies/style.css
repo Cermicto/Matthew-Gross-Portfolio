@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  overflow: hidden;
+}
+
+#olo {
+  display: block;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation: olo 15s infinite;
+}
+
+@keyframes olo {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(720deg)
+      scale(1.2, 1.2);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-50%) rotateX(360deg) rotateY(0deg)
+      scale(0.8, 0.8);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(720deg)
+      scale(1.2, 1.2);
+  }
+}
+
+.ring {
+  border: 1px solid red;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  perspective: 800px;
+}
+
+#ring1 {
+  width: 90%;
+  height: 90%;
+  animation: ring1 10s infinite;
+}
+
+@keyframes ring1 {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(0deg)
+      rotateZ(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateX(720deg) rotateY(0deg)
+      rotateZ(0deg);
+  }
+}
+
+#ring2 {
+  width: 90%;
+  height: 90%;
+  animation: ring2 10s infinite;
+}
+
+@keyframes ring2 {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(0deg)
+      rotateZ(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(720deg)
+      rotateZ(0deg);
+  }
+}
+
+#ring3 {
+  width: 90%;
+  height: 90%;
+  animation: ring3 15s infinite;
+}
+
+@keyframes ring3 {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(0deg)
+      rotateZ(0deg);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateX(360deg) rotateY(360deg)
+      rotateZ(720deg);
+  }
+}
+
+#ring4 {
+  animation: ring4 5s infinite;
+}
+
+#ring5 {
+  animation: ring4 5s infinite;
+  animation-delay: -0.1s;
+}
+
+#ring6 {
+  animation: ring4 5s infinite;
+  animation-delay: -0.2s;
+}
+
+#ring7 {
+  animation: ring4 5s infinite;
+  animation-delay: -0.3s;
+}
+
+#ring8 {
+  animation: ring4 5s infinite;
+  animation-delay: -0.4s;
+}
+
+#ring9 {
+  animation: ring4 5s infinite;
+  animation-delay: -0.5s;
+}
+
+#ring10 {
+  animation: ring4 5s infinite;
+  animation-delay: -0.6s;
+}
+
+#ring11 {
+  animation: ring4 5s infinite;
+  animation-delay: -0.7;
+}
+
+#ring12 {
+  animation: ring4 5s infinite;
+  animation-delay: -0.8s;
+}
+
+@keyframes ring4 {
+  0% {
+    width: 30%;
+    height: 30%;
+    top: 30%;
+    transform: translateX(-50%) translateY(-50%) rotateX(180deg) rotateY(180deg)
+      rotateZ(0deg);
+  }
+
+  50% {
+    width: 30%;
+    height: 30%;
+    top: 70%;
+    transform: translateX(-50%) translateY(-50%) rotateX(540deg) rotateY(540deg)
+      rotateZ(720deg);
+  }
+
+  100% {
+    width: 30%;
+    height: 30%;
+    top: 30%;
+    transform: translateX(-50%) translateY(-50%) rotateX(180deg) rotateY(180deg)
+      rotateZ(720deg);
+  }
+}

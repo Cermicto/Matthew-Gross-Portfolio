@@ -1,0 +1,56 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: black;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+#animationContainer {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0px solid #ff0000;
+    box-shadow: 0 0 5px 0px red, inset 0 0 50px 0px red;
+}
+
+.item {
+    position: relative;
+    display: inline-block;
+    background: red;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    margin: 12px 0;
+}
+
+.move-and-flicker {
+	animation-name: moveAndFlicker;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+}
+
+@keyframes moveAndFlicker {
+	0% {
+		opacity: 0.5;
+		transform: scale(0.8, 0.8) translateY(-10px) translateX(0px);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2, 1.2) translateY(0px) translateX(0px);
+	}
+	100% {
+		opacity: 0.5;
+		transform: scale(0.8, 0.8) translateY(10px) translateX(0px);
+	}
+}

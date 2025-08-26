@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Slideshow & Effects Editor</title>
+	<script type="text/javascript" src="script.js" defer></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="landscape">
+	<div id="slideAnimations">
+		<div id="fade" class="animation-preview-btn animation-preview-selected" mainanimationname="fade">
+			<div class="animation-preview-frame">
+				<div id="fadeInOutPreviewImg" class="animation-preview-img no-border"></div>
+			</div>
+			
+			<div class="animation-preview-title">Fade</div>
+		</div>
+		<div id="slideInFromLeft" class="animation-preview-btn" mainanimationname="slideRight">
+			<div class="animation-preview-frame">
+				<div id="slideInFromLeft_outFrame" class="animation-preview-img no-top-or-bottom-border"></div>
+				<div id="slideInFromLeft_inFrame" class="animation-preview-img no-top-or-bottom-border"></div>
+			</div>
+			
+			<div class="animation-preview-title">Slide Right</div>
+		</div>
+		<div id="slideInFromRight" class="animation-preview-btn" mainanimationname="slideLeft">
+			<div class="animation-preview-frame">
+				<div id="slideInFromRight_outFrame" class="animation-preview-img no-top-or-bottom-border"></div>
+				<div id="slideInFromRight_inFrame" class="animation-preview-img no-top-or-bottom-border"></div>
+			</div>
+			
+			<div class="animation-preview-title">Slide Left</div>
+		</div>
+		<div id="slideInFromTop" class="animation-preview-btn" mainanimationname="slideDown">
+			<div class="animation-preview-frame">
+				<div id="slideInFromTop_outFrame" class="animation-preview-img no-left-or-right-border"></div>
+				<div id="slideInFromTop_inFrame" class="animation-preview-img no-left-or-right-border"></div>
+			</div>
+			
+			<div class="animation-preview-title">Slide Down</div>
+		</div>
+		<div id="slideInFromBottom" class="animation-preview-btn" mainanimationname="slideUp">
+			<div class="animation-preview-frame">
+				<div id="slideInFromBottom_outFrame" class="animation-preview-img no-left-or-right-border"></div>
+				<div id="slideInFromBottom_inFrame" class="animation-preview-img no-left-or-right-border"></div>
+			</div>
+			
+			<div class="animation-preview-title">Slide Up</div>
+		</div>
+	</div>
+
+	<div id="slideEffects">
+		<div id="grayscalePreviewFrame" class="effect-preview-btn" maineffectname="grayscale">
+			<img id="grayscaleEffectBtnPreviewImg" class="effect-preview-img" src="images/ui/effects-preview.jpg">
+			
+			<div class="animation-preview-title">Grayscale</div>
+		</div>
+
+		<div id="sepiaPreviewFrame" class="effect-preview-btn" maineffectname="sepia">
+			<img id="sepiaEffectBtnPreviewImg" class="effect-preview-img" src="images/ui/effects-preview.jpg">
+			
+			<div class="animation-preview-title">Sepia</div>
+		</div>
+
+		<div id="invertPreviewFrame" class="effect-preview-btn" maineffectname="invert">
+			<img id="invertEffectBtnPreviewImg" class="effect-preview-img" src="images/ui/effects-preview.jpg">
+			
+			<div class="animation-preview-title">Invert</div>
+		</div>
+	</div>
+
+	<div id="slideshowControls">
+		<div id="animationControls">
+			<div id="transitionAnimationDemoAnimatedIcon">
+				<div id="fadeInOutDemoImagePlaceholder" class="demo-animation-image-placeholder"></div>
+				<div id="slideOutDemoImagePlaceholder" class="demo-animation-image-placeholder"></div>
+				<div id="slideInDemoImagePlaceholder" class="demo-animation-image-placeholder"></div>
+			</div>
+			<div id="animationsControlsInfo">Animations</div>
+		</div>
+
+		<div id="effectsControls">
+			<img id="effectsBtnPreviewImg" src="images/ui/effects-preview.jpg">
+			<div id="animationsControlsInfo">Effects</div>
+		</div>
+
+		<div id="directionControls">
+			<button id="playSlideshowBackwardsBtn" class="direction-btn direction-btn-left">
+				<span class="material-symbols-outlined direction-arrow">
+					arrow_back
+				</span>
+			</button>
+			<button id="playSlideshowForwardsBtn" class="direction-btn direction-btn-right direction-btn-selected">
+				<span class="material-symbols-outlined direction-arrow">
+					arrow_forward
+				</span>
+			</button>
+			<div id="directionControlsInfo"><span id="playDirectionMsg">Forwards</span></div>
+		</div>
+	</div>
+
+	<div id="slideshowContainer">
+		<div id="imageFrame"></div>
+		<img class="slideshow-image" src="images/robot-alien-0.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-1.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-2.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-3.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-4.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-5.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-6.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-7.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-8.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-9.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-10.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-11.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-12.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-13.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-14.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-15.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-16.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-17.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-18.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-19.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-20.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-21.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-22.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-23.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-24.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-25.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-26.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-27.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-28.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-29.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-30.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-31.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-32.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-33.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-34.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-35.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-36.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-37.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-38.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-39.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-40.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-41.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-42.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-43.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-44.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-45.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-46.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-47.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-48.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-49.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-50.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-51.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-52.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-53.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-54.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-55.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-56.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-57.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-58.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-59.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-60.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-61.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-62.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-63.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-64.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-65.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-66.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-67.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-68.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-69.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-70.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-71.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-72.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-73.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-74.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-75.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-76.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-77.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-78.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-79.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-80.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-81.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-82.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-83.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-84.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-85.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-86.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-87.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-88.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-89.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-90.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-91.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-92.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-93.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-94.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-95.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-96.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-97.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-98.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-99.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-100.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-101.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-102.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-103.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-104.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-105.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-106.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-107.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-108.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-109.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-110.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-111.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-112.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-113.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-114.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-115.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-116.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-117.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-118.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-119.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-120.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-121.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-122.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-123.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-124.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-125.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-126.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-127.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-128.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-129.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-130.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-131.jpg">
+		<img class="slideshow-image hidden" src="images/robot-alien-132.jpg">
+	</div>
+
+	<div id="infoAndSpeedControls">
+		<div class="flex-info-controls-container">
+			<div class="flex-info-column">
+				<div class="flex-info-row">Image Number:</div>
+				<div class="flex-info-row">Image Duration:</div>
+				<div class="flex-info-row">Animation Duration:</div>
+			</div>
+
+			<div class="flex-controls-column">
+				<div class="flex-control-row">
+					<button id="goToPreviousImageBtn" class="info-control-button left-hand-control-button">
+						<span id="slideArrowPrevious" class="material-symbols-outlined control-arrow-slide-number">
+							arrow_back_ios
+						</span>
+					</button>
+					<div id="countBox">
+						<span type="number" id="currentImageNumber" class="slide-control-number" name="currentImageNumber"></span>
+							/
+						<span id="totalImagesNumber"></span>
+					</div>
+					<button id="goToNextImageBtn" class="info-control-button right-hand-control-button">
+						<span id="slideArrowNext" class="material-symbols-outlined control-arrow-slide-number">
+							arrow_forward_ios
+						</span>
+					</button>
+				</div>
+				<div class="flex-control-row">
+					<button id="decreaseImageDurationBtn" class="info-control-button left-hand-control-button">
+						<span class="material-symbols-outlined control-arrow-duration-number keyboard-arrow-down">
+							keyboard_arrow_down
+						</span>
+					</button>
+					<span type="number" id="currentImageDuration" class="slide-control-number" name="currentImageDuration"></span>&nbsp;seconds
+					<button id="increaseImageDurationBtn" class="info-control-button right-hand-control-button">
+						<span class="material-symbols-outlined control-arrow-duration-number keyboard-arrow-up">
+							keyboard_arrow_up
+						</span>
+					</button>
+				</div>
+				<div class="flex-control-row">
+					<button id="decreaseAnimationDurationBtn" class="info-control-button left-hand-control-button">
+						<span class="material-symbols-outlined control-arrow-duration-number keyboard-arrow-down">
+							keyboard_arrow_down
+						</span>
+					</button>
+					<span type="number" id="currentAnimationDuration" class="slide-control-number" name="currentAnimationDuration"></span>&nbsp;seconds
+					<button id="increaseAnimationDurationBtn" class="info-control-button right-hand-control-button">
+						<span class="material-symbols-outlined control-arrow-duration-number keyboard-arrow-up">
+							keyboard_arrow_up
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
