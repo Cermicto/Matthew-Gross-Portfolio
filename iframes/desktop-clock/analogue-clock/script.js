@@ -47,7 +47,7 @@ function setClock() {
     if (seconds === 0) {
         window.setTimeout(function() {
             // cleared = clearHighlightedTicks()
-            for (var i = 1; i <= 60; i++) {
+            for (var i = 0; i < 60; i++) {
                 document.getElementsByClassName(`tick${i}`)[0].classList.remove('tick-highlighted')
             }
 
