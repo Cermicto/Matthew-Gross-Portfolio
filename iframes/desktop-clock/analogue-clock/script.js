@@ -13,7 +13,6 @@ rotatedDegree = null
 timeSpeedIncrement = 0
 
 function setClock() {
-
     now = new Date();
     minutes = now.getMinutes();
     hours = now.getHours();
@@ -61,7 +60,7 @@ function setClock() {
     return true
 }
 
-function setCircleRotation (seconds) {
+function setCircleRotation(seconds) {
     d.gebi('circleRotator').style.transform = `translateX(-50%) translateY(-50%) rotateZ(${rotatedDegree}deg)`
 
     if (seconds == 60) {
@@ -70,10 +69,10 @@ function setCircleRotation (seconds) {
         rotatedDegree = (seconds * 6) + 6
     }
 
-    
+
 }
 
-function clearHighlightedTicks () {
+function clearHighlightedTicks() {
     highlightedTicks = d.gebc('tick-highlighted')
 
     for (var i = 0; i < highlightedTicks.length; i++) {
@@ -83,7 +82,7 @@ function clearHighlightedTicks () {
     return true
 }
 
-function initializeHighlights () {
+function initializeHighlights() {
     now = new Date();
     minute = now.getMinutes();
     hour = now.getHours();
@@ -98,7 +97,7 @@ function initializeHighlights () {
 
     hourMarkNumber = d.gebi(`hourMarkNumber${hour}`)
     hourMarkDivider = d.gebi(`hourMark${hour}Divider`)
-    
+
     hourMarkNumber.classList.add('number-highlighted')
     hourMarkDivider.classList.add('hour-divider-highlighted')
 
@@ -132,7 +131,7 @@ function initializeHighlights () {
 
 
 
-function updateHighlights () {
+function updateHighlights() {
     now = new Date();
     minute = now.getMinutes();
     hour = now.getHours();
@@ -142,14 +141,14 @@ function updateHighlights () {
     }
 
     // set hour
-        hourMarkNumber = d.gebi(`hourMarkNumber${hour}`)
-        hourMarkDivider = d.gebi(`hourMark${hour}Divider`)
+    hourMarkNumber = d.gebi(`hourMarkNumber${hour}`)
+    hourMarkDivider = d.gebi(`hourMark${hour}Divider`)
 
-        d.gebc('number-highlighted')[0].classList.remove('number-highlighted')
-        hourMarkNumber.classList.add('number-highlighted')
+    d.gebc('number-highlighted')[0].classList.remove('number-highlighted')
+    hourMarkNumber.classList.add('number-highlighted')
 
-        d.gebc('hour-divider-highlighted')[0].classList.remove('hour-divider-highlighted')
-        hourMarkDivider.classList.add('hour-divider-highlighted')
+    d.gebc('hour-divider-highlighted')[0].classList.remove('hour-divider-highlighted')
+    hourMarkDivider.classList.add('hour-divider-highlighted')
 
     // set minute
 
@@ -176,18 +175,29 @@ function updateHighlights () {
 
 function createMinuteMarks() {
     for (let i = 1; i <= 60; i++) {
-        if (i % 5 != 0) {
-            const minuteMark = document.createElement('div');
+        if (i == 60) {
+            var hourMark = document.createElement('div');
+            hourMark.classList.add('hour-mark');
+            var angle = 0;
+            hourMark.innerHTML = `<div id="hourMarkNumberBox${(i / 5)}" class="hour-mark-number-box">
+                    <span id="hourMarkNumber${(i / 5)}" class="hour-mark-number" style="transform: rotateZ(${angle * -1}deg)">${i / 5}</span>
+                </div>
+                <br>
+                <span id="hourMark${i / 5}Divider" class="hour-mark-divider tick tick0">|</span>`;
+            hourMark.style.transform = `translate(-50%, -50%) rotateZ(${angle}deg) translateY(-105px)`;
+            clock.appendChild(hourMark);
+        } else if (i % 5 != 0) {
+            var minuteMark = document.createElement('div');
             minuteMark.className = `minute-mark tick tick${i}`
             minuteMark.id = "minuteMark" + i
             minuteMark.textContent = "|";
-            const angle = (i / 60) * 360;
+            var angle = (i / 60) * 360;
             minuteMark.style.transform = `translate(-50%, -50%) rotate(${angle}deg) translateY(-90px)`;
             clock.appendChild(minuteMark);
         } else {
-            const hourMark = document.createElement('div');
+            var hourMark = document.createElement('div');
             hourMark.classList.add('hour-mark');
-            const angle = (i / 60) * 360;
+            var angle = (i / 60) * 360;
             hourMark.innerHTML = `<div id="hourMarkNumberBox${(i / 5)}" class="hour-mark-number-box">
                     <span id="hourMarkNumber${(i / 5)}" class="hour-mark-number" style="transform: rotateZ(${angle * -1}deg)">${i / 5}</span>
                 </div>
@@ -201,7 +211,7 @@ function createMinuteMarks() {
     return true
 }
 
-function initializeTicks () {
+function initializeTicks() {
     now = new Date();
     seconds = now.getSeconds();
 
@@ -223,7 +233,7 @@ setInterval(function() {
     clockSet = setClock()
 }, 1000);
 
-function resizeClock () {
+function resizeClock() {
     windowHeight = window.innerHeight
     windowWidth = window.innerWidth
 
@@ -238,7 +248,7 @@ function resizeClock () {
     d.gebi('clock').style.transform = `scale(${clockRatioToArea},${clockRatioToArea})`
 }
 
-window.onresize = function () {
+window.onresize = function() {
     resizeClock()
 }
 
@@ -246,33 +256,33 @@ resizeClock()
 
 // refresh page on return to tab
 
-var vis = (function(){
-var stateKey, eventKey, keys = {
-    hidden: "visibilitychange",
-    webkitHidden: "webkitvisibilitychange",
-    mozHidden: "mozvisibilitychange",
-    msHidden: "msvisibilitychange"
-};
-for (stateKey in keys) {
-    if (stateKey in document) {
-        eventKey = keys[stateKey];
-        break;
+var vis = (function() {
+    var stateKey, eventKey, keys = {
+        hidden: "visibilitychange",
+        webkitHidden: "webkitvisibilitychange",
+        mozHidden: "mozvisibilitychange",
+        msHidden: "msvisibilitychange"
+    };
+    for (stateKey in keys) {
+        if (stateKey in document) {
+            eventKey = keys[stateKey];
+            break;
+        }
     }
-}
-return function(c) {
-    if (c) document.addEventListener(eventKey, c);
-    return !document[stateKey];
-}
+    return function(c) {
+        if (c) document.addEventListener(eventKey, c);
+        return !document[stateKey];
+    }
 })();
 
 var visible = vis(); // gives current state
 
-vis(reloadPage);      // registers a handler for visibility changes`
+vis(reloadPage); // registers a handler for visibility changes`
 
 // vis(function(){
 //     document.title = vis() ? 'Visible' : 'Not visible';
 // });
 
-function reloadPage () {
+function reloadPage() {
     location.reload();
 }
