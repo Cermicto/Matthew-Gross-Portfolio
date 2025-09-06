@@ -39,7 +39,7 @@ function setClock() {
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 
     if (seconds == 0) {
-        d.gebc(`tick60`)[0].classList.add('tick-highlighted')
+        d.gebc(`tick0`)[0].classList.add('tick-highlighted')
     } else {
         d.gebc(`tick${seconds}`)[0].classList.add('tick-highlighted')
     }
