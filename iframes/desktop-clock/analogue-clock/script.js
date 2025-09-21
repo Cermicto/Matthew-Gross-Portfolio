@@ -141,8 +141,13 @@ function updateHighlights() {
     }
 
     // set hour
-    hourMarkNumber = d.gebi(`hourMarkNumber${hour}`)
-    hourMarkDivider = d.gebi(`hourMark${hour}Divider`)
+    if (hour == 0) {
+        hourMarkNumber = d.gebi(`hourMarkNumber12`)
+        hourMarkDivider = d.gebi(`hourMark12Divider`)
+    } else {
+        hourMarkNumber = d.gebi(`hourMarkNumber${hour}`)
+        hourMarkDivider = d.gebi(`hourMark${hour}Divider`)
+    }
 
     d.gebc('number-highlighted')[0].classList.remove('number-highlighted')
     hourMarkNumber.classList.add('number-highlighted')
