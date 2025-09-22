@@ -1,0 +1,308 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: #000;
+}
+
+#logoContainer {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1,1);
+}
+
+.oval {
+	position: absolute;
+	height: 100%;
+	border: 2.5px solid;
+	box-shadow: 0 0 15px 0 #c407b670, inset rgba(196, 7, 182, 0.44) 0px 0px 15px 0px;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	width: 20%;
+	animation-duration: 30s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	background-color: rgb(101 21 129 / 6%);
+}
+
+.oval1 {
+	animation-name: Oval1;
+}
+
+@keyframes Oval1 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(0deg) scale(1,1);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(0deg) scale(1,1);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(166deg) scale(0.45,0.45);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(166deg) scale(0.45,0.45);
+	}
+}
+
+.oval2 {
+	animation-name: Oval2;
+}
+
+@keyframes Oval2 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(5deg) scale(0.95,0.95);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(5deg) scale(0.95,0.95);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(141deg) scale(0.5,0.5);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(141deg) scale(0.5,0.5);
+	}
+}
+
+.oval3 {
+	animation-name: Oval3;
+}
+
+@keyframes Oval3 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(12deg) scale(0.9,0.9);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(12deg) scale(0.9,0.9);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(118deg) scale(0.55,0.55);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(118deg) scale(0.55,0.55);
+	}
+}
+
+.oval4 {
+	animation-name: Oval4;
+}
+
+@keyframes Oval4 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(21deg) scale(0.85,0.85);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(21deg) scale(0.85,0.85);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(97deg) scale(0.6,0.6);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(97deg) scale(0.6,0.6);
+	}
+}
+
+.oval5 {
+	animation-name: Oval5;
+}
+
+@keyframes Oval5 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(33deg) scale(0.8,0.8);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(33deg) scale(0.8,0.8);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(78deg) scale(0.65,0.65);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(78deg) scale(0.65,0.65);
+	}
+}
+
+.oval6 {
+	animation-name: Oval6;
+}
+
+@keyframes Oval6 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(46deg) scale(0.75,0.75);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(46deg) scale(0.75,0.75);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(61deg) scale(0.7,0.7);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(61deg) scale(0.7,0.7);
+	}
+}
+
+.oval7 {
+	animation-name: Oval7;
+}
+
+@keyframes Oval7 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(61deg) scale(0.7,0.7);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(61deg) scale(0.7,0.7);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(46deg) scale(0.75,0.75);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(46deg) scale(0.75,0.75);
+	}
+}
+
+.oval8 {
+	animation-name: Oval8;
+}
+
+@keyframes Oval8 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(78deg) scale(0.65,0.65);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(78deg) scale(0.65,0.65);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(33deg) scale(0.8,0.8);
+	}
+
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(33deg) scale(0.8,0.8);
+	}
+}
+
+.oval9 {
+	animation-name: Oval9;
+}
+
+@keyframes Oval9 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(97deg) scale(0.6,0.6);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(97deg) scale(0.6,0.6);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(21deg) scale(0.85,0.85);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(21deg) scale(0.85,0.85);
+	}
+}
+
+.oval10 {
+	animation-name: Oval10;
+}
+
+@keyframes Oval10 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(118deg) scale(0.55,0.55);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(118deg) scale(0.55,0.55);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(12deg) scale(0.9,0.9);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(12deg) scale(0.9,0.9);
+	}
+}
+
+.oval11 {
+	animation-name: Oval11;
+}
+
+@keyframes Oval11 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(141deg) scale(0.5,0.5);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(141deg) scale(0.5,0.5);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(5deg) scale(0.95,0.95);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(5deg) scale(0.95,0.95);
+	}
+}
+
+.oval12 {
+	animation-name: Oval12;
+}
+
+@keyframes Oval12 {
+	0% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(166deg) scale(0.45,0.45);
+	}
+	25% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(166deg) scale(0.45,0.45);
+	}
+	75% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(0deg) scale(1,1);
+	}
+	100% {
+		border-color: rgba(255,255,255,0.5);
+		transform: translate(-50%, -50%) rotate(0deg) scale(1,1);
+	}
+}
