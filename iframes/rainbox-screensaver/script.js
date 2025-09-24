@@ -4,22 +4,22 @@ d.gebi = d.getElementById
 b = d.body
 w = window
 
-newElementSizeMin = 20
-newElementSizeMax = 70
-newElementSize = 20
+newElementSizeMin = 10
+newElementSizeMax = 450
+newElementSize = 10
 newElementExpansion = 'grow'
 
-newElementSpeedMin = 5
-newElementSpeedMax = 20
+newElementSpeedMin = 1
+newElementSpeedMax = 50
 newElementSpeedDirection = 'faster'
-newElementSpeedIncrement = 0.05
+newElementSpeedIncrement = 0.25
 
 newElementSpeedX = 10
 newElementSpeedY = 10
 
-newElementAnimationDurationMin = 4
-newElementAnimationDurationMax = 10
-newElementAnimationDuration = 7
+newElementAnimationDurationMin = 10
+newElementAnimationDurationMax = 20
+newElementAnimationDuration = 20
 newElementAnimationDurationDirection = null
 
 newElementPosX = 10
