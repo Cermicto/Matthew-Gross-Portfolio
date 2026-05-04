@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Clock</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="clock-container">
+      <div class="date" id="date"></div>
+      <div class="time" id="time"></div>
+    </div>
+    <script src="script.js"></script>
+    <div class="timer">
+      <div class="countdown-timer">
+        <div>
+          <span id="days">0</span>
+          <span>Days Left</span>
+        </div>
+      </div>
+    </div>
+    <div id="frame1366x768"></div>
+    <iframe id="analogueClock" src="analogue-clock/index.html"></iframe>
+    <div id="circles1" class="circles">
+      <div id="circle1" class="circle"></div>
+      <div id="circle2" class="circle"></div>
+    </div>
+    <div id="circles2" class="circles">
+      <div id="circle3" class="circle"></div>
+      <div id="circle4" class="circle"></div>
+      <div id="circle5" class="circle"></div>
+      <div id="circle6" class="circle"></div>
+      <div id="circle7" class="circle"></div>
+      <div id="circle8" class="circle"></div>
+    </div>
+    <div id="cubesLeft" class="cubes-container">
+      <div id="cubeLeft1" class="cube">
+        <div class="cube-face matrix-in-out cube-top"></div>
+        <div class="cube-face matrix-in-out cube-left"></div>
+        <div class="cube-face matrix-in-out cube-front"></div>
+        <div class="cube-face matrix-in-out cube-right"></div>
+        <div class="cube-face matrix-in-out cube-back"></div>
+        <div class="cube-face matrix-in-out cube-bottom"></div>
+      </div>
+      <div id="cubeLeft2" class="cube">
+        <div class="cube-face matrix-out-in cube-top"></div>
+        <div class="cube-face matrix-out-in cube-left"></div>
+        <div class="cube-face matrix-out-in cube-front"></div>
+        <div class="cube-face matrix-out-in cube-right"></div>
+        <div class="cube-face matrix-out-in cube-back"></div>
+        <div class="cube-face matrix-out-in cube-bottom"></div>
+      </div>
+      <div id="cubeLeft3" class="cube">
+        <div class="cube-face matrix-in-out cube-top"></div>
+        <div class="cube-face matrix-in-out cube-left"></div>
+        <div class="cube-face matrix-in-out cube-front"></div>
+        <div class="cube-face matrix-in-out cube-right"></div>
+        <div class="cube-face matrix-in-out cube-back"></div>
+        <div class="cube-face matrix-in-out cube-bottom"></div>
+      </div>
+      <div id="cubeLeft4" class="cube">
+        <div class="cube-face matrix-out-in cube-top"></div>
+        <div class="cube-face matrix-out-in cube-left"></div>
+        <div class="cube-face matrix-out-in cube-front"></div>
+        <div class="cube-face matrix-out-in cube-right"></div>
+        <div class="cube-face matrix-out-in cube-back"></div>
+        <div class="cube-face matrix-out-in cube-bottom"></div>
+      </div>
+      <div id="cubeLeft5" class="cube">
+        <div class="cube-face matrix-in-out cube-top"></div>
+        <div class="cube-face matrix-in-out cube-left"></div>
+        <div class="cube-face matrix-in-out cube-front"></div>
+        <div class="cube-face matrix-in-out cube-right"></div>
+        <div class="cube-face matrix-in-out cube-back"></div>
+        <div class="cube-face matrix-in-out cube-bottom"></div>
+      </div>
+      <div id="cubeLeft6" class="cube">
+        <div class="cube-face matrix-out-in cube-top"></div>
+        <div class="cube-face matrix-out-in cube-left"></div>
+        <div class="cube-face matrix-out-in cube-front"></div>
+        <div class="cube-face matrix-out-in cube-right"></div>
+        <div class="cube-face matrix-out-in cube-back"></div>
+        <div class="cube-face matrix-out-in cube-bottom"></div>
+      </div>
+    </div>
+    <div id="cubesRight" class="cubes-container">
+      <div id="cubeRight1" class="cube">
+        <div class="cube-face matrix-in-out cube-top"></div>
+        <div class="cube-face matrix-in-out cube-left"></div>
+        <div class="cube-face matrix-in-out cube-front"></div>
+        <div class="cube-face matrix-in-out cube-right"></div>
+        <div class="cube-face matrix-in-out cube-back"></div>
+        <div class="cube-face matrix-in-out cube-bottom"></div>
+      </div>
+      <div id="cubeRight2" class="cube">
+        <div class="cube-face matrix-out-in cube-top"></div>
+        <div class="cube-face matrix-out-in cube-left"></div>
+        <div class="cube-face matrix-out-in cube-front"></div>
+        <div class="cube-face matrix-out-in cube-right"></div>
+        <div class="cube-face matrix-out-in cube-back"></div>
+        <div class="cube-face matrix-out-in cube-bottom"></div>
+      </div>
+      <div id="cubeRight3" class="cube">
+        <div class="cube-face matrix-in-out cube-top"></div>
+        <div class="cube-face matrix-in-out cube-left"></div>
+        <div class="cube-face matrix-in-out cube-front"></div>
+        <div class="cube-face matrix-in-out cube-right"></div>
+        <div class="cube-face matrix-in-out cube-back"></div>
+        <div class="cube-face matrix-in-out cube-bottom"></div>
+      </div>
+      <div id="cubeRight4" class="cube">
+        <div class="cube-face matrix-out-in cube-top"></div>
+        <div class="cube-face matrix-out-in cube-left"></div>
+        <div class="cube-face matrix-out-in cube-front"></div>
+        <div class="cube-face matrix-out-in cube-right"></div>
+        <div class="cube-face matrix-out-in cube-back"></div>
+        <div class="cube-face matrix-out-in cube-bottom"></div>
+      </div>
+      <div id="cubeRight5" class="cube">
+        <div class="cube-face matrix-in-out cube-top"></div>
+        <div class="cube-face matrix-in-out cube-left"></div>
+        <div class="cube-face matrix-in-out cube-front"></div>
+        <div class="cube-face matrix-in-out cube-right"></div>
+        <div class="cube-face matrix-in-out cube-back"></div>
+        <div class="cube-face matrix-in-out cube-bottom"></div>
+      </div>
+      <div id="cubeRight6" class="cube">
+        <div class="cube-face matrix-out-in cube-top"></div>
+        <div class="cube-face matrix-out-in cube-left"></div>
+        <div class="cube-face matrix-out-in cube-front"></div>
+        <div class="cube-face matrix-out-in cube-right"></div>
+        <div class="cube-face matrix-out-in cube-back"></div>
+        <div class="cube-face matrix-out-in cube-bottom"></div>
+      </div>
+    </div>
+    <div id="hexAni">
+      <div id="hexArm1" class="hex-arm-container"></div>
+      <div id="hexArm2" class="hex-arm-container"></div>
+      <div id="hexArm3" class="hex-arm-container"></div>
+      <div id="hexArm4" class="hex-arm-container"></div>
+      <div id="hexArm5" class="hex-arm-container"></div>
+      <div id="hexArm6" class="hex-arm-container"></div>
+    </div>
+    <div id="spiralAni">
+      <div class="center-ball"></div>
+      <div class="outer-ball-1-container-1 outer-ball-1-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-1-container-2 outer-ball-1-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-1-container-3 outer-ball-1-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-1-container-4 outer-ball-1-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-1-container-5 outer-ball-1-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-1-container-6 outer-ball-1-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-2-container-1 outer-ball-2-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-2-container-2 outer-ball-2-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-2-container-3 outer-ball-2-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-2-container-4 outer-ball-2-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-2-container-5 outer-ball-2-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-2-container-6 outer-ball-2-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-3-container-1 outer-ball-3-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-3-container-2 outer-ball-3-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-3-container-3 outer-ball-3-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-3-container-4 outer-ball-3-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-3-container-5 outer-ball-3-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-3-container-6 outer-ball-3-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-4-container-1 outer-ball-4-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-4-container-2 outer-ball-4-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-4-container-3 outer-ball-4-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-4-container-4 outer-ball-4-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-4-container-5 outer-ball-4-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-4-container-6 outer-ball-4-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-5-container-1 outer-ball-5-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-5-container-2 outer-ball-5-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-5-container-3 outer-ball-5-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-5-container-4 outer-ball-5-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-5-container-5 outer-ball-5-container">
+        <div class="outer-ball"></div>
+      </div>
+      <div class="outer-ball-5-container-6 outer-ball-5-container">
+        <div class="outer-ball"></div>
+      </div>
+    </div>
+    <div id="cornerSecondHand1" class="corner-second-hand"></div>
+    <div id="cornerSecondHand2" class="corner-second-hand"></div>
+    <div id="cornerSecondHand3" class="corner-second-hand"></div>
+    <div id="cornerSecondHand4" class="corner-second-hand"></div>
+    <div id="cornerSecondHand5" class="corner-second-hand"></div>
+    <div id="cornerSecondHand6" class="corner-second-hand"></div>
+    <div id="leftOuterPushCircle1" class="push-circle left-outer-push-circle"></div>
+    <div id="leftOuterPushCircle2" class="push-circle left-outer-push-circle"></div>
+    <div id="pushCircle" class="push-circle"></div>
+    <div id="rightOuterPushCircle2" class="push-circle right-outer-push-circle"></div>
+    <div id="rightOuterPushCircle1" class="push-circle right-outer-push-circle"></div>
+    <div id="measureTop" class="horizontal-measure"></div>
+    <div id="measureBottom" class="horizontal-measure"></div>
+  </body>
+</html>
