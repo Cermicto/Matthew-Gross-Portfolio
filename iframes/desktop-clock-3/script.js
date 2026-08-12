@@ -139,39 +139,48 @@ function updateCountdown() {
 }
 
 function setColumnRotationDelay() {
-    var date = new Date()
+    requestAnimationFrame(function () {
+        const date = new Date();
 
-    delay = date.getSeconds()
+        const second = date.getSeconds() + (date.getMilliseconds() / 1000);
 
-    cubes = d.gebc('cube')
-    arms = d.gebc('hex-arm-container')
+        const phase = (time, cycle) => ((time % cycle) + cycle) % cycle;
 
-    window.setTimeout(function() {
-        for (var i = 0; i < cubes.length; i++) {
-            cubes[i].setAttribute('style', `animation-delay: -${delay - 1}s`)
+        const cubes = d.gebc('cube');
+        const arms = d.gebc('hex-arm-container');
+        const spiralAni = d.gebi('spiralAni');
+        const cornerSecondHands = d.gebc('corner-second-hand');
+        const pushCircles = d.gebc('push-circle');
+
+        for (let i = 0; i < cubes.length; i++) {
+            cubes[i].style.animationDelay =
+                `-${phase(second - 1, 60)}s`;
         }
 
-        for (var i = 0; i < arms.length; i++) {
-            arms[i].setAttribute('style', `animation-delay: -${delay - 15}s`)
+        for (let i = 0; i < arms.length; i++) {
+            arms[i].style.animationDelay =
+                `-${phase(second - 15, 60)}s`;
         }
 
-        spiralAni = d.gebi('spiralAni')
-        spiralAni.setAttribute('style', `animation-delay: -${delay - 15}s`)
+        spiralAni.style.animationDelay =
+            `-${phase(second - 15, 60)}s`;
 
-        cornerSecondHands = d.gebc('corner-second-hand')
-        addedDelay = 0
+        let addedDelay = 0;
 
-        for (var i = 0; i < cornerSecondHands.length; i++) {
-            cornerSecondHands[i].setAttribute('style', `animation-delay: -${(delay + 7.5) - (i * (0.25 + addedDelay))}s`)
-            addedDelay += 0.03
+        for (let i = 0; i < cornerSecondHands.length; i++) {
+            const handDelay =
+                (second + 7.5) - (i * (0.25 + addedDelay));
+
+            cornerSecondHands[i].style.animationDelay = `-${handDelay}s`;
+
+            addedDelay += 0.03;
         }
 
-        pushCircles = d.gebc('push-circle')
-
-        for (var i = 0; i < pushCircles.length; i++) {
-            pushCircles[i].setAttribute('style', `animation-delay: -${delay - 2}s`)
+        for (let i = 0; i < pushCircles.length; i++) {
+            pushCircles[i].style.animationDelay =
+                `-${phase(second - 2, 60)}s`;
         }
-    }, 50)
+    });
 }
 
 setColumnRotationDelay()
