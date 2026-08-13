@@ -183,6 +183,39 @@ function setColumnRotationDelay() {
     });
 }
 
-setColumnRotationDelay()
+function initializeClockAnimations() {
+    const cornerSecondHands = d.gebc('corner-second-hand');
+
+    /*
+     * Prevent a cold-load frame where all six hands begin at the CSS
+     * default position before their individual wall-clock offsets exist.
+     */
+    for (let i = 0; i < cornerSecondHands.length; i++) {
+        cornerSecondHands[i].style.animationPlayState = 'paused';
+    }
+
+    setColumnRotationDelay();
+
+    /*
+     * setColumnRotationDelay() applies its own delay values on the first
+     * animation frame. Resume the edge circles one frame afterward, once
+     * their staggered negative delays have been applied.
+     */
+    requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+            for (let i = 0; i < cornerSecondHands.length; i++) {
+                cornerSecondHands[i].style.animationPlayState = 'running';
+            }
+        });
+    });
+}
+
+if (d.readyState === 'loading') {
+    d.addEventListener('DOMContentLoaded', initializeClockAnimations, {
+        once: true
+    });
+} else {
+    initializeClockAnimations();
+}
 
 setInterval(updateCountdown, 1000);
